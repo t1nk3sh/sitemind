@@ -1,0 +1,34 @@
+---
+# Deploys as one Render web service that both serves the built React app
+# and exposes the FastAPI API on the same hostname/port.
+# https://render.com/docs/blueprint-spec
+services:
+  - name: sitemind-api
+    type: web
+    env: python
+    region: oregon
+    plan: free
+    # Persistent disk so SQLite and uploaded images survive restarts.
+    # Free services can have one 1 GB disk.
+    disk:
+      name: sitemind-data
+      mount_path: ./data
+      size_gb: 1
+    buildCommand: "./scripts/build.sh"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
+        sync: false
+      - key: DATA_DIR
+        value: ./data
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: MAX_UPLOAD_MB
+        value: "8"
+      - key: AI_TIMEOUT_SECONDS
+        value: "120"
+      - key: REQUIRE_LIVE_AI
+        value: "false"

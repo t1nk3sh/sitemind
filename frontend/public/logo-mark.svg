@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="SiteMind">
+  <title>SiteMind</title>
+  <defs>
+    <linearGradient id="sm-tile" x1="4" y1="2" x2="60" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD68C"/>
+      <stop offset="0.55" stop-color="#F2A93B"/>
+      <stop offset="1" stop-color="#DB8A11"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="17" fill="url(#sm-tile)"/>
+  <g fill="none" stroke="#1C1305" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M32 8 52 20v24L32 56 12 44V20Z"/>
+    <path d="M38 28.4 52 20M26 28.4 12 20M32 39V56"/>
+  </g>
+  <circle cx="32" cy="32" r="4" fill="#1C1305"/>
+</svg>

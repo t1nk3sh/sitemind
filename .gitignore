@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+
+# Runtime data (SQLite database + uploaded site photos) and service logs
+data/
+backend/data/
+logs/
+
+# Secrets
+.env
+.env.local
+/freebuff-sites-build/
+
+# Local Wrangler/workerd verification cache
+.wrangler/
+
+# Local verification artifacts (preview screenshots, wrangler test harness)
+/artifacts/
+
+# Hand-off archives
+/sitemind.zip
